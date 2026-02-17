@@ -1,10 +1,10 @@
-import { MultipartFile as _MultipartFile } from "fastify-multipart";
+import { MultipartFile as _MultipartFile } from "@fastify/multipart";
 import { Readable } from "stream";
 
 import { Storage, StorageFile } from "../storage";
 
 export type MultipartFile = Omit<_MultipartFile, "file"> & {
-  value?: any;
+  value?: unknown;
   file: Readable & { truncated?: boolean };
 };
 

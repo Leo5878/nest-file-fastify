@@ -4,11 +4,11 @@ import {
   FastifyAdapter,
   NestFastifyApplication,
 } from "@nestjs/platform-fastify";
-import multipart from "fastify-multipart";
+import multipart from "@fastify/multipart";
 
-import { AppModule } from "./app-module";
+import { AppModule } from "./app.module";
 
-export const runApp = async () => {
+async function bootstrap() {
   const adapter = new FastifyAdapter();
 
   const app = await NestFactory.create<NestFastifyApplication>(
@@ -22,6 +22,7 @@ export const runApp = async () => {
     if (err) return console.error(err);
     console.log(`Listening on ${address}!`);
   });
+}
 
-  return app;
-};
+bootstrap().catch((e) => console.error(e));
+

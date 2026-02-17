@@ -1,4 +1,4 @@
-import { MultipartFile } from "fastify-multipart";
+import { MultipartFile } from "@fastify/multipart";
 import { FastifyRequest } from "fastify";
 import { tmpdir } from "os";
 import { createWriteStream } from "fs";
@@ -9,12 +9,11 @@ import { RouteGenericInterface } from "fastify/types/route";
 
 import { StorageFile, Storage } from "./storage";
 import { getUniqueFilename, pathExists } from "../fs";
-import { pump } from "../stream";
+import { pipeline } from "stream/promises";
 
 export interface DiskStorageFile extends StorageFile {
   dest: string;
   filename: string;
-  originalFilename: string;
   path: string;
 }
 
@@ -43,9 +42,10 @@ const excecuteStorageHandler = (
 };
 
 const ENV_TESTS_STORAGE_TMP_PATH = process.env.__TESTS_TMP_PATH__;
-export class DiskStorage
-  implements Storage<DiskStorageFile, DiskStorageOptions>
-{
+export class DiskStorage implements Storage<
+  DiskStorageFile,
+  DiskStorageOptions
+> {
   public readonly options?: DiskStorageOptions;
 
   constructor(options?: DiskStorageOptions) {
@@ -70,7 +70,7 @@ export class DiskStorage
     const path = join(dest, filename);
     const stream = createWriteStream(path);
 
-    await pump(file.file, stream);
+    await pipeline(file.file, stream);
 
     const { encoding, fieldname, mimetype } = file;
 
