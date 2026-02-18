@@ -10,6 +10,6 @@ export const UploadedFiles = createParamDecorator(
   ): Promise<Record<string, StorageFile[]> | StorageFile[] | undefined> => {
     const req = getMultipartRequest(ctx.switchToHttp());
 
-    return req?.storageFiles;
+    return req.storageFiles;
   },
 );

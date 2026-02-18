@@ -1,6 +1,6 @@
 {
   "name": "@blazity/nest-file-fastify",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "fastify-multipart decorators for Nest.js",
   "license": "MIT",
   "main": "build/src/index.js",
@@ -27,7 +27,7 @@
   },
   "scripts": {
     "dev": "concurrently \"tsc --watch --p tsconfig.lib.json\" \"tsc --watch --p tsconfig.examples.json\"",
-    "watch": "nodemon ./build/examples/index.js",
+    "watch": "nodemon ./build/examples/main.js",
     "build:ci": "tsc --p tsconfig.lib.json && tsc --p tsconfig.examples.json",
     "build": "tsc --p tsconfig.lib.json",
     "lint": "eslint \"src/**\" --ext \".js,.jsx,.ts,.tsx\"",
@@ -36,7 +36,7 @@
     "prepublishOnly": "yarn clean && npm run build"
   },
   "devDependencies": {
-    "@fastify/multipart": "^7.7.3",
+    "@fastify/multipart": "^9.4.0",
     "@nestjs/common": "^11.1.14",
     "@nestjs/config": "^4.0.3",
     "@nestjs/core": "^11.1.14",
