@@ -16,7 +16,7 @@ async function bootstrap() {
     adapter,
   );
 
-  app.register(multipart as any);
+  app.register(multipart);
 
   await app.listen(3000, (err, address) => {
     if (err) return console.error(err);

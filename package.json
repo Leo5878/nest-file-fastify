@@ -1,6 +1,6 @@
 {
-  "name": "@blazity/nest-file-fastify",
-  "version": "1.1.0",
+  "name": "@leo5878/nest-file-fastify",
+  "version": "1.1.1",
   "description": "fastify-multipart decorators for Nest.js",
   "license": "MIT",
   "main": "build/src/index.js",
@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/976977577/nest-file-fastify"
+    "url": "https://github.com/Leo5878/nest-file-fastify/"
   },
   "keywords": [
     "nest",
@@ -30,12 +30,14 @@
     "watch": "nodemon ./build/examples/main.js",
     "build:ci": "tsc --p tsconfig.lib.json && tsc --p tsconfig.examples.json",
     "build": "tsc --p tsconfig.lib.json",
-    "lint": "eslint \"src/**\" --ext \".js,.jsx,.ts,.tsx\"",
-    "lint:fix": "npm run lint -- --fix",
+    "lint": "eslint",
+    "lint:fix": "yarn run lint -- --fix",
     "clean": "rimraf build",
-    "prepublishOnly": "yarn clean && npm run build"
+    "prepublishOnly": "yarn clean && yarn run build"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/js": "^10.0.1",
     "@fastify/multipart": "^9.4.0",
     "@nestjs/common": "^11.1.14",
     "@nestjs/config": "^4.0.3",
@@ -56,9 +58,7 @@
     "reflect-metadata": "^0.2.2",
     "rimraf": "^6.1.3",
     "rxjs": "^7.8.1",
-    "typescript": "^5.1.6"
-  },
-  "dependencies": {
-    "@fastify/multipart": "^9.4.0"
+    "typescript": "^5.1.6",
+    "typescript-eslint": "^8.56.0"
   }
 }
