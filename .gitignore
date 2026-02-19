@@ -8,3 +8,4 @@ build
 .uploads_2
 nest-file-fastify
 *.tsbuildinfo
+coverage
