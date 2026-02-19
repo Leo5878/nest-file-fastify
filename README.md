@@ -9,6 +9,20 @@
 
 This library adds decorators for [Nest.js](https://github.com/nestjs/nest) to support [@fastify/multipart](https://github.com/fastify/fastify-multipart). The API is very similar to the official Nest.js Express file decorators.
 
+## Changes from original
+
+**Dependency update & deprecated package replacement (from PR [#9](https://github.com/Blazity/nest-file-fastify/pull/9))**
+- Replaced deprecated `fastify-multipart` with the official `@fastify/multipart` package to ensure compatibility with current versions of Fastify.
+- Updated project dependencies to improve overall stability and security.
+- Files that are not saved to disk now also return a unique `filename`.
+- Introduced new `UploadedFile` type with a `filename` field.
+- File upload size limit in tests set to 5MB.
+
+**Additional improvements**
+- Removed `util.promisify` wrapping — the new version of `@fastify/multipart` natively supports `async/await`, which allowed simplifying the interceptors code.
+- Updated the demo application in the `example/` folder to match the new API.
+- Minor fixes for types, exports and edge cases.
+
 ## Installation
 
 NPM
