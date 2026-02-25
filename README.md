@@ -1,7 +1,7 @@
 <div align="left">
   <h1> fastify-multipart for Nest.js</h1>
 
-[![Github Actions](https://img.shields.io/github/workflow/status/blazity/nest-file-fastify/Build?style=flat-square)](https://github.com/Blazity/nest-file-fastify)
+[![pkg.pr.new](https://pkg.pr.new/badge/Leo5878/nest-file-fastify)](https://pkg.pr.new/~/Leo5878/nest-file-fastify)
 [![NPM](https://img.shields.io/npm/v/@blazity/nest-file-fastify.svg?style=flat-square)](https://www.npmjs.com/package/@blazity/nest-file-fastify)
 [![NPM](https://img.shields.io/npm/dm/@blazity/nest-file-fastify?style=flat-square)](https://www.npmjs.com/package/@blazity/nest-file-fastify)
 
